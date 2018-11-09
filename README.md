@@ -17,14 +17,13 @@
 Working....
 
  
-| **Check Points:**                                                                                                       | 
-| ----------------------------------------------------------------------------------------------------------------------- |
-| • [Checkpoint 01](https://github.com/filipegmedeiros/IMD0012-ITP/tree/master/Unidade01/Avaliativas/Atividade01)          |
-| • [Checkpoint 02](https://github.com/filipegmedeiros/IMD0012-ITP/tree/master/Unidade01/Avaliativas/Atividade01)          |
-| • [Checkpoint 03](https://github.com/filipegmedeiros/IMD0012-ITP/tree/master/Unidade01/Avaliativas/Atividade01)          |
-| • [Checkpoint 04](https://github.com/filipegmedeiros/IMD0012-ITP/tree/master/Unidade01/Avaliativas/Atividade01)          |
-| • [Checkpoint 05](https://github.com/filipegmedeiros/IMD0012-ITP/tree/master/Unidade01/Avaliativas/Atividade01)          |
-
+| **Check Points:**                                                                                           | 
+| ----------------------------------------------------------------------------------------------------------- |
+| • [Checkpoint 01](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01)          |
+| • [Checkpoint 02](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02)          |
+| • [Checkpoint 03](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03)          |
+| • [Checkpoint 04](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04)          |
+| • [Checkpoint 05](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint05)          |
 
 
 
