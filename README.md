@@ -16,7 +16,7 @@ Copie, altere, arrume e use
 -----------------------------------------------------------------------------------------------------------------------------
 
  ## Introdução
-Working....
+Ainda está sendo criando o **man**/**help** do projeto. Aguarde as próximas etapas.
 
  
 -----------------------------------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ Working....
         <img src="https://img.shields.io/badge/Checkpoint%2002-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint3">
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03">
         <img src="https://img.shields.io/badge/Checkpoint%2003-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
