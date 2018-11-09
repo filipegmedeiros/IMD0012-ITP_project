@@ -7,7 +7,7 @@ Copie, altere, arrume e use
 
 <p align="center">
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/blob/master/LICENSE">
-        <img src="https://img.shields.io/github/license/filipegmedeiros/github_django_ticket.svg?longCache=true&style=for-the-badge"
+        <img src="https://img.shields.io/github/license/filipegmedeiros/IMD0012-ITP_project.svg?longCache=true&style=for-the-badge"
              alt="License" /></a>
 </p>
 
