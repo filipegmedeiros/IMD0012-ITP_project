@@ -1,6 +1,8 @@
 #include "headers.h"
 
 int main(void) {
+  db *banco = malloc(sizeof(db));
+
   int op=0;
   
   printf("\t MENU\n========================\nSelecione uma operaçao:\n[1]-Criar Tabela\n[2]-Imprimir Tabela\n");
