@@ -1,7 +1,8 @@
 # IMD0012-ITP
 **Projeto** das máterias de *Introdução às técnicas de programação  e Práticas de técnicas de programação*  do ano **2018.2**              
-                        ``` Copie, altere, arrume e use``` 
+     
 <p align="center">
+  ``` Copie, altere, arrume e use``` 
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/blob/master/LICENSE.md">
         <img src="https://img.shields.io/github/license/filipegmedeiros/github_django_ticket.svg?longCache=true&style=for-the-badge"
              alt="License" /></a>
