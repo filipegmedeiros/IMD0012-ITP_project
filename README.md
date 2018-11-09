@@ -19,11 +19,12 @@ Working....
  
 | **Check Points:**                                                                                           | 
 | ----------------------------------------------------------------------------------------------------------- |
-| • [<img src="https://img.shields.io/badge/Checkpoint%2001-Fail-red.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01)          |
-| • [Checkpoint 02](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02)          |
-| • [Checkpoint 03](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03)          |
-| • [Checkpoint 04](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04)          |
-| • [Checkpoint 05](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint05)          |
+| [<img src="https://img.shields.io/badge/Checkpoint%2001-Fail-red.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01)          |
+| [<img src="https://img.shields.io/badge/Checkpoint%2002-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02)          |
+| [<img src="https://img.shields.io/badge/Checkpoint%2003-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03)          |
+| [<img src="https://img.shields.io/badge/Checkpoint%2004-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04)          |
+| [<img src="https://img.shields.io/badge/Checkpoint%2005-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint05)          |
+
 
 
 
