@@ -1,6 +1,6 @@
 # IMD0012-ITP
-**Projeto** das máterias de *Introdução às técnicas de programação  e Práticas de técnicas de programação*  do ano **2018.2**              
-     
+**Projeto** das máterias de *Introdução às técnicas de programação  e Práticas de técnicas de programação*  do ano **2018.2**       
+
 <p align="center">
 Copie, altere, arrume e use
 </p>
@@ -12,8 +12,15 @@ Copie, altere, arrume e use
 </p>
 
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+| **DUPLA DO PROJETO:**                                            | 
+| ---------------------------------------------------------------- |
+|  • [Filipe Medeiros](https://github.com/filipegmedeiros)          |
+| • [Sara Beatriz](https://github.com/sarabms)                     |     
 
 -----------------------------------------------------------------------------------------------------------------------------
+
 
  ## Introdução
 Ainda está sendo criando o **man**/**help** do projeto. Aguarde as próximas etapas.
