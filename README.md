@@ -19,7 +19,7 @@ Working....
  
 | **Check Points:**                                                                                           | 
 | ----------------------------------------------------------------------------------------------------------- |
-| • [Checkpoint 01](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01)          |
+| • [<img src="https://img.shields.io/badge/Checkpoint%2001-Fail-red.svg?longCache=true&style=for-the-badge" />](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01)          |
 | • [Checkpoint 02](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02)          |
 | • [Checkpoint 03](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03)          |
 | • [Checkpoint 04](https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04)          |
