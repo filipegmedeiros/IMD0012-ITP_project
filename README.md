@@ -27,25 +27,22 @@ Working....
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
         <img src="https://img.shields.io/badge/Checkpoint%2001-Fail-red.svg?longCache=true&style=for-the-badge" /></a>
 </p>
+
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
-        <img src="https://img.shields.io/badge/Checkpoint%2002-Waiting-lightgrey.svg?longCache=true&style=for-the-badge
-" /></a>
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02">
+        <img src="https://img.shields.io/badge/Checkpoint%2002-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
-        <img src="https://img.shields.io/badge/Checkpoint%2003-Waiting-lightgrey.svg?longCache=true&style=for-the-badge
-" /></a>
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint3">
+        <img src="https://img.shields.io/badge/Checkpoint%2003-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
-        <img src="https://img.shields.io/badge/Checkpoint%2004-Waiting-lightgrey.svg?longCache=true&style=for-the-badge
-" /></a>
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04">
+        <img src="https://img.shields.io/badge/Checkpoint%2004-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
-        <img src="https://img.shields.io/badge/Checkpoint%2005-Waiting-lightgrey.svg?longCache=true&style=for-the-badge
-" /></a>
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint05">
+        <img src="https://img.shields.io/badge/Checkpoint%2005-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 
 
