@@ -4,10 +4,21 @@ int main(void) {
   db *banco = malloc(sizeof(db));
 
   int op=0;
-  
+
+
   printf("\
 \n========================\n\
-\t MENU\
+\t MENU FUNCIONAL \
+\n========================\n\n\
+Selecione uma operaçao:\n\
+[1] - Criar uma nova tabela\n\
+[2] - Imprimir tabela existente\n\
+[3] - Sair do Programa\n\
+\n");
+ 
+  printf("\
+\n========================\n\
+\t MENU DESEJAVEL\
 \n========================\n\n\
 Selecione uma operaçao:\n\
 [1] - Criar uma nova tabela\n\
@@ -18,7 +29,7 @@ Selecione uma operaçao:\n\
 \n");
 
 
-  printf("\
+/*  printf("\
 \n========================\n\
 \t MENU\
 \n========================\n\n\
@@ -29,7 +40,7 @@ Selecione uma operaçao:\n\
 [4] - Deletar algum dado nessa tabela\n\
 [5] - Mostrar a tabela\n\
 [6] - Voltar ao menu principal\n\
-\n");
+\n");*/
 
 
 
