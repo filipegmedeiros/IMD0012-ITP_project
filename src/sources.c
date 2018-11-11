@@ -5,8 +5,6 @@ void criar_tabela(db* banco){
   banco -> qntd_linhas = 0;
 
 
-  char* nome_da_coluna;
-
   printf("\n\n->Determine o nome da tabela: ");
   char* nome_tabela = (char*)malloc(24);
 
@@ -23,24 +21,19 @@ void criar_tabela(db* banco){
   banco -> elementos = elem;
 
   for(int i = 0 ; i < banco -> qntd_colunas ; i++){
-     printf("%d \n\n ->Qual o nome da Coluna",i,"? ");
+     printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
      char* nome_coluna = (char*)malloc(24);
-     scanf("%s",nome_da_coluna);
+     scanf("%s",nome_coluna);
      elem[i].nome_da_coluna = nome_coluna;
 
-     printf("%d \n\n ->Qual o tamanho do campo da Coluna ",i,"? ");
-     char* tamanho_campo = (char*)malloc(24);
-     elem[i].tamanho_do_campo=tamanho_campo;
-     elem[i].ID=1;
 
   }
-  int x = strlen(nome_tabela);
-    nome_tabela[x]='.';
-    nome_tabela[x+1]='c';
-    nome_tabela[x+2]='s';
-    nome_tabela[x+3]='v';
-    nome_tabela[x+4]='\0';
-    fp=fopen(nome_tabela,"wb");
+    char* dir = (char*)malloc(24);
+    strcat(dir, "./data/");
+    strcat(nome_tabela,".csv");
+    strcat(dir, nome_tabela);
+
+    fp=fopen(dir,"wb");
 
 
     free(nome_tabela);
@@ -48,6 +41,10 @@ void criar_tabela(db* banco){
         free(elem[i].nome_da_coluna);
 
     }
+    free(nome_tabela);
+    //free(tamanho_campo);
+    //free(nome_coluna);
+    free(dir);
     free(elem);
 
 }
