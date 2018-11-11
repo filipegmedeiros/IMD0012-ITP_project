@@ -33,14 +33,9 @@ Ainda está sendo criando o **man**/**help** do projeto. Aguarde as próximas et
 
 <p align="center">
     <a href="https://github.com/sarabms/database_manager/releases/tag/v0.1">
-        <img src="https://img.shields.io/badge/Checkpoint%2001%20por%20Sara-Feito-brightgreen.svg?longCache=true&style=for-the-badge" /></a>
+        <img src="https://img.shields.io/badge/CHECKPOINT%2001-Done-brightgreen.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 
-
-<p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint01">
-        <img src="https://img.shields.io/badge/Checkpoint%2001%20por%20Filipe-FAIL-red.svg?longCache=true&style=for-the-badge" /></a>
-</p>
 
 <p align="center">
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02">
