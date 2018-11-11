@@ -22,8 +22,12 @@ Copie, altere, arrume e use
 -----------------------------------------------------------------------------------------------------------------------------
 
 
- ## Introdução
-Ainda está sendo criando o **man**/**help** do projeto. Aguarde as próximas etapas.
+ ## Como usar?
+```
+git clone https://github.com/filipegmedeiros/IMD0012-ITP_project
+cd IMD0012-ITP_project
+make all
+```
 
  
 -----------------------------------------------------------------------------------------------------------------------------
