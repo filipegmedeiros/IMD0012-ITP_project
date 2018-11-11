@@ -26,5 +26,6 @@ typedef struct banco_de_dados{
 
 }db;
 
+//void inserir_elementos(db* banco);
 void criar_tabela(db* banco);
 void imprime_tabela(db* banco);

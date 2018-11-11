@@ -4,26 +4,51 @@ FILE *fp;
 void criar_tabela(db* banco){
     banco -> qntd_linhas = 0;
 
+// Determina o Nome da Tabela
     printf("\n\n->Determine o nome da tabela: ");
     char* dir = (char*)malloc(24);
     scanf(" %s", dir);
 
     char* nome_tabela = (char*)malloc(24);
 
-    strcat(nome_tabela, "./data/");
+// Determina o caminho onde será salvo a Tabela
+    strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
 
+// Determina a chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
     char* chave_primaria = (char*)malloc(24);
     scanf(" %s", chave_primaria);
     banco -> a_chave_primaria = chave_primaria;
+
+// Abre o arquivo chaves_primarias e adiciona a ela a Chave
+    fp=fopen("./data/chaves_primarias.csv","wb");
+    fprintf(fp,"%s,", banco -> a_chave_primaria);
+    fclose(fp);
+// Aqui ele tá substituindo a M0x0 pela key... A ideia era adicionar na proxima col
+
+/*
+02) Falta Verificar se existe a chave na tabela chaves_primarias
+*/
+
+// Abre o arquivo ids e adiciona a ela um ID
+    fp=fopen("./data/ids.csv","wb");
+    int id = 1;
+    fprintf(fp,"%d,", id);
+    id++;
+    fclose(fp);
+// aqui nem ta funcionando ainda 
+
+
 
 
     fp=fopen(nome_tabela,"wb");
     banco -> nome_da_tabela = nome_tabela;
 
     fprintf(fp,"%s,", banco -> a_chave_primaria);
+
+
 
 
     printf("\n\n->Quantas colunas deseja criar? ");
