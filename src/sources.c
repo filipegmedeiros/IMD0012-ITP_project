@@ -23,7 +23,7 @@ void criar_tabela(db* banco){
     banco -> a_chave_primaria = chave_primaria;
 
 // Abre o arquivo chaves_primarias e adiciona a ela a Chave
-    fp=fopen("./data/chaves_primarias.csv","wb");
+    fp=fopen("./data/chaves_primarias.csv","a");
     fprintf(fp,"%s,", banco -> a_chave_primaria);
     fclose(fp);
 // Aqui ele tá substituindo a M0x0 pela key... A ideia era adicionar na proxima col
