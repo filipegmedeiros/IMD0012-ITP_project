@@ -40,6 +40,9 @@ Selecione uma operaçao:\n\
       criar_tabela(banco); 
       break;
     case 2:
+      imprime_tabela(banco); 
+      break;
+    case 3:
         return -1;
         break;
     default:
