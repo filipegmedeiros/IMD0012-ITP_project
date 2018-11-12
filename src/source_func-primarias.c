@@ -67,7 +67,7 @@ if ( aux == 0 ){
     fp=fopen(nome_tabela,"wb");
     banco -> nome_da_tabela = nome_tabela;
 
-    fprintf(fp,"%s,", banco -> a_chave_primaria);
+    //fprintf(fp,"%s,", banco -> a_chave_primaria);
 
 
 
@@ -119,7 +119,7 @@ void imprime_tabela(db* banco){
 
     char* nome_tabela = (char*)malloc(24);
 
-    strcat(nome_tabela, "./data/");
+    strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
     char c;

@@ -5,36 +5,8 @@ void procurar_dado(db* banco){
 }
 
 void adicionar_linha(db* banco){
-	int qntd_lin=0, qntd_col=0;
-  char elemento[50];
-
-  printf("\n\n->Determine o nome da tabela: ");
-  char* dir = (char*)malloc(24);
-  scanf(" %s", dir);
-  char* nome_tabela = (char*)malloc(24);
-  strcat(nome_tabela, "./data/banco/");
-  strcat(dir,".csv");
-  strcat(nome_tabela, dir);
-  fp = fopen(nome_tabela,"a");
-  fprintf(fp, "\n");
-
-  //imprime_tabela(db* banco);
-
-  printf("\n\n->Determine o numero de colunas:\n");
-  scanf("\t%d", &qntd_col);
-  printf("\n\n->Quantos elementos deseja inserir?\n");
-  scanf("%d", &qntd_lin);
-
-  for(int j=0; j<qntd_lin; j++){
-    for (int i = 0; i<qntd_col; i++){
-      printf("Insira um elemento na coluna %d: ", i+1);
-      scanf("%s", elemento);
-      fprintf(fp, "%s,", elemento);
-    }
-    fprintf(fp, "\n");
-  }
+	printf("Under Construction");
 }
-
 void adicionar_coluna(db* banco){
 	printf("Under Construction");
 }
