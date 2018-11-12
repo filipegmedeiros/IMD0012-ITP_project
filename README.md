@@ -6,7 +6,7 @@ Copie, altere, arrume e use
 </p>
 
 <p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/blob/master/LICENSE">
+    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/blob/master/LICENSE.md">
         <img src="https://img.shields.io/github/license/filipegmedeiros/IMD0012-ITP_project.svg?longCache=true&style=for-the-badge"
              alt="License" /></a>
 </p>
