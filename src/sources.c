@@ -25,8 +25,20 @@ void criar_tabela(db* banco){
 // Abre o arquivo chaves_primarias e adiciona a ela a Chave
     fp=fopen("./data/chaves_primarias.csv","a");
     fprintf(fp,"%s,", banco -> a_chave_primaria);
+
     fclose(fp);
-// Aqui ele tá substituindo a M0x0 pela key... A ideia era adicionar na proxima col
+
+//Ler o arquivo chaves_primarias
+    fp=fopen("./data/chaves_primarias.csv","r");
+    printf("As chaves Existentes São: \n");
+    char* verificador = malloc(sizeof(char)*24);
+    while(fscanf(fp, "%[^,],", verificador) != EOF){
+        printf("%s,", verificador);
+    }
+//    printf("[0]: %s [1]: %s [2]: %s", verificador[0],verificador[1],verificador[2]);
+    fclose(fp);
+
+
 
 /*
 02) Falta Verificar se existe a chave na tabela chaves_primarias
