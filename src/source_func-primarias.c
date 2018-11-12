@@ -40,7 +40,7 @@ void testando_a_chave(){
     }
     fclose(fp);
 }
-testing();
+testando_a_chave();
 
 if ( aux == 0 ){
     fp=fopen("./data/chaves_primarias.csv","wb");
@@ -49,7 +49,7 @@ if ( aux == 0 ){
 } else{
     printf("\n\n->Determine o novo nome da chave primaria: ");
     scanf(" %s", chave_primaria);
-    testing();
+    testando_a_chave();
 }
 
 

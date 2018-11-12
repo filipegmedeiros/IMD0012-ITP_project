@@ -9,7 +9,7 @@ VPATH=src bin
 all:    $(BINS)
 
 db:    headers.h main.c src_main.c src_tables.c
-	$(CC) $(CFLAGS) ./src/main.c ./src/headers.h ./src/src_main.c ./src/src_tables.c $(FLAGS) ./bin/programa.out
+	$(CC) $(CFLAGS) ./src/main.c ./src/headers.h ./src/source_func-primarias.c ./src/source_func-secundarias.c $(FLAGS) ./bin/programa.out
 
 run:    programa.out
 	./$<
