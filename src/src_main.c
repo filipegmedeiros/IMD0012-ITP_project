@@ -6,10 +6,10 @@ void criar_tabela(db* banco){
 
 // Determina o Nome da Tabela
     printf("\n\n->Determine o nome da tabela: ");
-    char* dir = (char*)malloc(24);
+    char* dir = (char*)malloc(50);
     scanf(" %s", dir);
 
-    char* nome_tabela = (char*)malloc(24);
+    char* nome_tabela = (char*)malloc(50);
 
 // Determina o caminho onde será salvo a Tabela
     strcat(nome_tabela, "./data/banco/");
@@ -22,11 +22,34 @@ void criar_tabela(db* banco){
     scanf(" %s", chave_primaria);
     banco -> a_chave_primaria = chave_primaria;
 
-// Abre o arquivo chaves_primarias e adiciona a ela a Chave
-    fp=fopen("./data/chaves_primarias.csv","a");
-    fprintf(fp,"%s,", banco -> a_chave_primaria);
-
+    int aux = 0;
+//Ler o arquivo chaves_primarias
+void testing(){
+    aux = 0;
+    fp=fopen("./data/chaves_primarias.csv","r");
+    char* verificador = malloc(sizeof(char)*24);
+    while(fscanf(fp, "%[^,],", verificador) != EOF){
+    if ( strncmp(verificador,chave_primaria,4) == 0){
+	printf("Essa chave já existe, por favor, escolha outra.");
+	aux = 1;
+	break;
+	} else {
+	   continue;
+        }
+    }
     fclose(fp);
+}
+testing();
+
+if ( aux == 0 ){
+    fp=fopen("./data/chaves_primarias.csv","wb");
+    fprintf(fp,"%s,", chave_primaria);
+    fclose(fp);
+} else{
+    printf("\n\n->Determine o novo nome da chave primaria: ");
+    scanf(" %s", chave_primaria);
+    testing();
+}
 
 //Ler o arquivo chaves_primarias
     fp=fopen("./data/chaves_primarias.csv","r");
@@ -37,6 +60,8 @@ void criar_tabela(db* banco){
     }
 //    printf("[0]: %s [1]: %s [2]: %s", verificador[0],verificador[1],verificador[2]);
     fclose(fp);
+
+// Abre o arquivo chaves_primarias e adiciona a ela a Chave
 
 
 

@@ -8,8 +8,8 @@ VPATH=src bin
 
 all:    $(BINS)
 
-db:    headers.h main.c src_main.c src_tables.c
-	$(CC) $(CFLAGS) ./src/main.c ./src/headers.h ./src/src_main.c ./src/src_tables.c $(FLAGS) ./bin/programa.out
+db:    headers.h main.c sources.c
+	$(CC) $(CFLAGS) ./src/main.c ./src/headers.h ./src/sources.c $(FLAGS) ./bin/programa.out
 
 run:    programa.out
 	./$<

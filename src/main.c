@@ -12,11 +12,12 @@ int main(void) {
 \n========================\n\n\
 Selecione uma operaçao:\n\
 [1] - Criar uma nova tabela\n\
-[2] - Imprimir tabela existente\n\
-[3] - Sair do Programa\n\
+[2] - Operar uma tabela existente\n\
+[3] - Imprimir tabela existente\n\
+[4] - Sair do Programa\n\
 \n");
  
-  printf("\
+/*  printf("\
 \n========================\n\
 \t MENU DESEJAVEL\
 \n========================\n\n\
@@ -26,21 +27,8 @@ Selecione uma operaçao:\n\
 [3] - Deletar uma tabela existente\n\
 [4] - Mostrar todas as tabelas\n\
 [5] - Sair do Programa\n\
-\n");
-
-
-/*  printf("\
-\n========================\n\
-\t MENU\
-\n========================\n\n\
-Selecione uma operaçao:\n\
-[1] - Procurar algum dado nessa tabela\n\
-[2] - Adicionar uma nova linha\n\
-[3] - Adicionar uma nova coluna\n\
-[4] - Deletar algum dado nessa tabela\n\
-[5] - Mostrar a tabela\n\
-[6] - Voltar ao menu principal\n\
 \n");*/
+
 
 
 
@@ -51,10 +39,10 @@ Selecione uma operaçao:\n\
       criar_tabela(banco); 
       break;
     case 2:
-      imprime_tabela(banco);
+      opera_tabela(banco);
       break;
     case 3:
-        //inserir_elementos(banco);
+      imprime_tabela(banco);
         break;
     default:
       printf("opçao invalida.");
