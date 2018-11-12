@@ -35,6 +35,7 @@ void deletar_tabela(db* banco);
 void opera_tabela(db* banco);
 void procurar_dado(db* banco);
 void adicionar_id(char* nome_tabela);
+void testando_a_chave();
 void adicionar_linha(db* banco);
 void adicionar_coluna(db* banco);
 void imprime_tabela(db* banco);
