@@ -16,15 +16,16 @@ void criar_tabela(db* banco){
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
 
-// Determina a chave Primaria
+// Determina a primeira chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
     char* chave_primaria = (char*)malloc(24);
     scanf(" %s", chave_primaria);
     banco -> a_chave_primaria = chave_primaria;
 
     int aux = 0;
-//Ler o arquivo chaves_primarias
-void testing(){
+
+//Ler o arquivo chaves_primarias e verifica se existe uma chave primaria igual
+void testando_a_chave(){
     aux = 0;
     fp=fopen("./data/chaves_primarias.csv","r");
     char* verificador = malloc(sizeof(char)*24);
@@ -51,23 +52,6 @@ if ( aux == 0 ){
     testing();
 }
 
-//Ler o arquivo chaves_primarias
-    fp=fopen("./data/chaves_primarias.csv","r");
-    printf("As chaves Existentes São: \n");
-    char* verificador = malloc(sizeof(char)*24);
-    while(fscanf(fp, "%[^,],", verificador) != EOF){
-        printf("%s,", verificador);
-    }
-//    printf("[0]: %s [1]: %s [2]: %s", verificador[0],verificador[1],verificador[2]);
-    fclose(fp);
-
-// Abre o arquivo chaves_primarias e adiciona a ela a Chave
-
-
-
-/*
-02) Falta Verificar se existe a chave na tabela chaves_primarias
-*/
 
 // Abre o arquivo ids e adiciona a ela um ID
     fp=fopen("./data/ids.csv","wb");
@@ -79,7 +63,7 @@ if ( aux == 0 ){
 
 
 
-
+// Cria o arquivo com o nome escolhido para a tabela
     fp=fopen(nome_tabela,"wb");
     banco -> nome_da_tabela = nome_tabela;
 
@@ -87,13 +71,14 @@ if ( aux == 0 ){
 
 
 
-
+// Cria as colunas no arquivo escolhido.
     printf("\n\n->Quantas colunas deseja criar? ");
     int qntd_col;
     scanf("\t%d", &qntd_col);
     banco -> qntd_colunas = qntd_col;
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
     banco -> elementos = elem;
+
 
  /*   char* tipo = (char*)malloc(24);
     for(int i=0; i< banco -> qntd_colunas; i++){
@@ -126,6 +111,7 @@ if ( aux == 0 ){
 
 }
 
+// Imprime a tabela escolhida
 void imprime_tabela(db* banco){
     printf("\n\n->Qual o nome da tabela? ");
     char* dir = (char*)malloc(24);
