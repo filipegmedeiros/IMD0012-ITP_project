@@ -1,4 +1,4 @@
-**zlib License**
+zlib License
 
 (C) 2018 Filipe Gabriel Fonseca de Medeiros
 
