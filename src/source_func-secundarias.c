@@ -25,12 +25,12 @@ void adicionar_linha(db* banco){
   char elemento[50];
 
   printf("\n\n->Determine o nome da tabela: ");
-  char* dir = (char*)malloc(24);
+  char* dir = (char*)malloc(50);
   scanf(" %s", dir);
-  char* dir2 = (char*)malloc(24);
+  char* dir2 = (char*)malloc(50);
   strcpy(dir2,dir);
 
-  char* nome_tabela = (char*)malloc(24);
+  char* nome_tabela = (char*)malloc(50);
   strcat(nome_tabela, "./data/banco/");
   strcat(dir,".csv");
   strcat(nome_tabela, dir);
