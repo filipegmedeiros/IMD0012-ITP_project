@@ -4,6 +4,22 @@ void procurar_dado(db* banco){
 	printf("Under Construction");
 }
 
+void adicionar_id(char* endereco){
+    
+    
+    printf("o caminho é %s",endereco);
+
+  char* numero_id = (char*)malloc(24);
+  fp = fopen(endereco,"a");
+
+ printf("\n\n->Determine o ID da linha atual:\n");
+ scanf("%s", numero_id);
+ fprintf(fp, "%s,", numero_id);
+ fprintf(fp,"\n");
+ fclose(fp);
+
+}
+
 void adicionar_linha(db* banco){
 	int qntd_lin=0, qntd_col=0;
   char elemento[50];
@@ -11,6 +27,9 @@ void adicionar_linha(db* banco){
   printf("\n\n->Determine o nome da tabela: ");
   char* dir = (char*)malloc(24);
   scanf(" %s", dir);
+  char* dir2 = (char*)malloc(24);
+  strcpy(dir2,dir);
+
   char* nome_tabela = (char*)malloc(24);
   strcat(nome_tabela, "./data/banco/");
   strcat(dir,".csv");
@@ -19,6 +38,11 @@ void adicionar_linha(db* banco){
   fprintf(fp, "\n");
 
   //imprime_tabela(db* banco);
+  //criando a pasta id
+  char* ids = (char*)malloc(50);
+  strcat(ids, "./data/ids/");
+  strcat(dir2,".csv");
+  strcat(ids, dir2);
 
   printf("\n\n->Determine o numero de colunas:\n");
   scanf("\t%d", &qntd_col);
@@ -27,13 +51,21 @@ void adicionar_linha(db* banco){
 
   for(int j=0; j<qntd_lin; j++){
     for (int i = 0; i<qntd_col; i++){
+     
       printf("Insira um elemento na coluna %d: ", i+1);
       scanf("%s", elemento);
       fprintf(fp, "%s,", elemento);
     }
     fprintf(fp, "\n");
+    adicionar_id(ids);
   }
+   fclose(fp);
 }
+
+
+
+
+
 
 void adicionar_coluna(db* banco){
 	printf("Under Construction");

@@ -7,15 +7,22 @@ void criar_tabela(db* banco){
 // Determina o Nome da Tabela
     printf("\n\n->Determine o nome da tabela: ");
     char* dir = (char*)malloc(50);
+    char* dir2 = (char*)malloc(50);
     scanf(" %s", dir);
-
+    strcpy(dir2,dir);
     char* nome_tabela = (char*)malloc(50);
-
+    char* ids = (char*)malloc(50);
+    strcpy(ids,nome_tabela);
 // Determina o caminho onde será salvo a Tabela
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
 
+    strcat(ids, "./data/ids/");
+    strcat(dir2,".csv");
+    strcat(ids, dir2);
+
+    printf("%s",ids);
 // Determina a primeira chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
     char* chave_primaria = (char*)malloc(24);
@@ -52,16 +59,11 @@ if ( aux == 0 ){
     testando_a_chave();
 }
 
-
-// Abre o arquivo ids e adiciona a ela um ID
-    fp=fopen("./data/ids.csv","wb");
-    int id = 1;
-    fprintf(fp,"%d,", id);
-    id++;
-    fclose(fp);
-// aqui nem ta funcionando ainda 
-
-
+// Abre o arquivo ID e coloca na primeira linha a chave
+        fp = fopen(ids,"wb");
+        fprintf(fp,"%s,", banco -> a_chave_primaria);
+        fprintf(fp, "\n");
+        fclose(fp);
 
 // Cria o arquivo com o nome escolhido para a tabela
     fp=fopen(nome_tabela,"wb");
@@ -108,6 +110,8 @@ if ( aux == 0 ){
     //free(nome_coluna);
     free(dir);
     free(elem);
+    fclose(fp);
+
 
 }
 
