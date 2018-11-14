@@ -48,7 +48,5 @@ int main(void) {
             printf("opçao invalida.");
 
     }
-
-    fclose(fp);
     return 0;
 }

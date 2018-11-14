@@ -80,27 +80,31 @@ void testando_a_chave(){
     strcat(dir2,".csv");
     strcat(ids, dir2);
 
-    printf("\n\n->Determine o número da chave: ");
-    char* numero_chave = (char*)malloc(50);
-    scanf(" %s", numero_chave);
+    int chaveok=0;
+    while(!chaveok){
+        printf("\n\n->Determine o número da chave: ");
+        char* numero_chave = (char*)malloc(50);
+        scanf(" %s", numero_chave);
 
 
-    fp=fopen(ids,"r");
-    char* verificador = malloc(sizeof(char)*24);
-    while(fscanf(fp, "%[^,],", verificador) != EOF){
-        if ( strncmp(verificador,numero_chave,4) == 0){
-            printf("Essa chave está correta!");
+        fp = fopen(ids,"r");
+        char* verificador = malloc(sizeof(char)*24);
 
-            break;
-        } else {
-            printf("Essa chave não existe, por favor, insira outra.");
-            //scanf("%s",numero_chave);
-            break;
+
+        while(fscanf(fp, "%[^,],", verificador) != EOF){
+            if (strncmp(verificador,numero_chave, 20) == 0){
+                printf("Essa chave está correta!\n");
+                printf("verificador: %s", verificador);
+                chaveok = 1;
+                break;
+            }
         }
-    }
-    fclose(fp);
 
-    testando_a_chave();
+
+     
+    }
+    
+    fclose(fp);
 
 }
 /* DHSAIDUHSADUSHAIDHSAUHDSADUISAHDIUA */
