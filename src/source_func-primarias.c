@@ -50,7 +50,7 @@ void criar_tabela(db* banco){
     testando_a_chave();
 
     if ( aux == 0 ){
-        fp=fopen("./data/chaves_primarias.csv","wb");
+        fp=fopen("./data/chaves_primarias.csv","a");
         fprintf(fp,"%s,", chave_primaria);
         fclose(fp);
     } else{
@@ -112,7 +112,7 @@ void criar_tabela(db* banco){
     free(elem);
     fclose(fp);
 
-
+    voltar_menu_primario();
 }
 
 // Imprime a tabela escolhida
@@ -137,4 +137,5 @@ void imprime_tabela(db* banco){
         c = fgetc(fp); 
     }
     printf("\n");
+    voltar_menu_primario();
 }

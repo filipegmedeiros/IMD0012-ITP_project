@@ -60,15 +60,13 @@ void adicionar_linha(db* banco){
         adicionar_id(ids);
     }
     fclose(fp);
+    voltar_menu_secundario();
 }
 
 
-/* DHSAIDUHSADUSHAIDHSAUHDSADUISAHDIUA */
-/* DHSAIDUHSADUSHAIDHSAUHDSADUISAHDIUA */
-
 //Ler o arquivo chaves_primarias e verifica se existe uma chave primaria igual
 void testando_a_chave(){
-    int aux = 0 ;
+
     printf("\n\n->Determine o nome da tabela: ");
     char* dir = (char*)malloc(50);
     scanf(" %s", dir);
@@ -107,11 +105,6 @@ void testando_a_chave(){
     fclose(fp);
 
 }
-/* DHSAIDUHSADUSHAIDHSAUHDSADUISAHDIUA */
-/* DHSAIDUHSADUSHAIDHSAUHDSADUISAHDIUA */
-
-
-
 
 void adicionar_coluna(db* banco){
     printf("Under Construction");
@@ -119,24 +112,21 @@ void adicionar_coluna(db* banco){
 void deletar_dado(db* banco){
     printf("Under Construction");
 }
-void voltar_menu(){
-    printf("Under Construction");
-}
 
 
 
 void opera_tabela(db* banco){
     printf("\
-            \n========================\n\
-            \t MENU\
-            \n========================\n\n\
-            Selecione uma operaçao:\n\
-            [1] - Procurar algum dado nessa tabela\n\
-            [2] - Adicionar uma nova linha\n\
-            [3] - Editar a linha\n\
-            [4] - Deletar algum dado nessa tabela\n\
-            [5] - Mostrar a tabela\n\
-            [6] - Voltar ao menu principal\n\
+\n========================\n\
+\t MENU DA TABELA\
+\n========================\n\n\
+Selecione uma operaçao:\n\
+[1] - Procurar algum dado nessa tabela\n\
+[2] - Adicionar uma nova linha\n\
+[3] - Editar a linha\n\
+[4] - Deletar algum dado nessa tabela\n\
+[5] - Mostrar a tabela\n\
+[6] - Voltar ao menu principal\n\
             \n");
 
     int op2=0;
@@ -160,10 +150,95 @@ void opera_tabela(db* banco){
             imprime_tabela(banco);
             break;
         case 6:
-            voltar_menu();
+            voltar_menu_primario();
             break;
         default:
             printf("opçao invalida.");
 
     }
 }
+
+void exibir_menu(){
+    db *banco = malloc(sizeof(db));
+
+    int op=0;
+
+
+    printf("\
+\n========================\n\
+\t MENU INICIAL \
+\n========================\n\n\
+Selecione uma operaçao:\n\
+[1] - Criar uma nova tabela\n\
+[2] - Operar uma tabela existente\n\
+[3] - Imprimir tabela existente\n\
+[4] - Sair do Programa\n\
+            \n");
+
+
+
+
+
+
+    scanf("%d", &op);
+
+    switch (op){
+        case 1:
+            criar_tabela(banco); 
+            break;
+        case 2:
+            opera_tabela(banco);
+            break;
+        case 3:
+            imprime_tabela(banco);
+            break;
+        default:
+            printf("Adeus! \n");
+
+    }
+}
+
+void voltar_menu_primario(){
+    printf("\nDeseja Voltar ao menu Inicial? (s/S) ");
+    char op5;
+    scanf(" %c", &op5);
+
+    if ( op5 == 's' || op5 == 'S' ){
+        exibir_menu();
+    }else{
+        printf("\nObrigado por usar nosso programa!\n");
+    }
+
+}
+
+
+void voltar_menu_secundario(){
+    db *banco = malloc(sizeof(db));
+    printf("\
+\n==============================\n\
+Para voltar aos Menus digite: \
+\n==============================\n\n\
+[1] - Voltar ao Menu da Tabela\n\
+[2] - Voltar ao Menu Inicial\n\
+[3] - Sair do Programa\n");
+    int op5;
+    scanf(" %d", &op5);
+
+  switch (op5){
+        case 1:
+            opera_tabela(banco);
+            break;
+        case 2:
+            exibir_menu(banco);
+            break;
+        case 3:
+            break;
+        default:
+            printf("opçao invalida.");
+
+    }
+
+}
+
+
+

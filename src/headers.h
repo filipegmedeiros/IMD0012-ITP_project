@@ -41,4 +41,6 @@ void adicionar_coluna(db* banco);
 void imprime_tabela(db* banco);
 void deletar_dado(db* banco);
 void imprime_tabela(db* banco);
-void voltar_menu();
+void exibir_menu();
+void voltar_menu_primario();
+void voltar_menu_secundario();
