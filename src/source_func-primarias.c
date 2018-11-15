@@ -8,11 +8,19 @@ void criar_tabela(db* banco){
     printf("\n\n->Determine o nome da tabela: ");
     char* dir = (char*)malloc(50);
     char* dir2 = (char*)malloc(50);
+    char* dir3 = (char*)malloc(50);
     scanf(" %s", dir);
+
     strcpy(dir2,dir);
+    strcpy(dir3,dir);
+
     char* nome_tabela = (char*)malloc(50);
     char* ids = (char*)malloc(50);
+    char* qntid_colunas = (char*)malloc(50);
+
     strcpy(ids,nome_tabela);
+    strcpy(qntid_colunas,nome_tabela);
+
     // Determina o caminho onde será salvo a Tabela
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
@@ -22,7 +30,11 @@ void criar_tabela(db* banco){
     strcat(dir2,".csv");
     strcat(ids, dir2);
 
-    printf("%s",ids);
+    strcat(qntid_colunas, "./data/qnt_cols/");
+    strcat(dir3,".csv");
+    strcat(qntid_colunas, dir3);
+
+    //printf("%s",ids);
     // Determina a primeira chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
     char* chave_primaria = (char*)malloc(24);
@@ -65,22 +77,26 @@ void criar_tabela(db* banco){
     fprintf(fp, "\n");
     fclose(fp);
 
-    // Cria o arquivo com o nome escolhido para a tabela
-    fp=fopen(nome_tabela,"wb");
-    banco -> nome_da_tabela = nome_tabela;
-
-    //fprintf(fp,"%s,", banco -> a_chave_primaria);
-
-
 
     // Cria as colunas no arquivo escolhido.
     printf("\n\n->Quantas colunas deseja criar? ");
     int qntd_col;
     scanf("\t%d", &qntd_col);
+    
+    // Adicona a um banco o numero de colunas que possui.
     banco -> qntd_colunas = qntd_col;
+    fp = fopen(qntid_colunas,"wb");
+    fprintf(fp,"%d,", banco -> qntd_colunas);
+    fclose(fp);
+
+
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
     banco -> elementos = elem;
 
+
+    // Cria o arquivo com o nome escolhido para a tabela
+    fp=fopen(nome_tabela,"wb");
+    banco -> nome_da_tabela = nome_tabela;
 
     /*   char* tipo = (char*)malloc(24);
          for(int i=0; i< banco -> qntd_colunas; i++){

@@ -1,4 +1,5 @@
 #include "headers.h"
+
 FILE *fp;
 void procurar_dado(db* banco){
     printf("Under Construction");
@@ -7,7 +8,7 @@ void procurar_dado(db* banco){
 void adicionar_id(char* endereco){
 
 
-    printf("o caminho é %s",endereco);
+//    printf("o caminho é %s",endereco);
 
     char* numero_id = (char*)malloc(24);
     fp = fopen(endereco,"a");
@@ -29,23 +30,40 @@ void adicionar_linha(db* banco){
     scanf(" %s", dir);
     char* dir2 = (char*)malloc(50);
     strcpy(dir2,dir);
+    char* dir3 = (char*)malloc(50);
+    strcpy(dir3,dir);
 
     char* nome_tabela = (char*)malloc(50);
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
-    fp = fopen(nome_tabela,"a");
-    fprintf(fp, "\n");
 
     //imprime_tabela(db* banco);
     //criando a pasta id
     char* ids = (char*)malloc(50);
+    char* qntid_colunas = (char*)malloc(50);
+
     strcat(ids, "./data/ids/");
     strcat(dir2,".csv");
     strcat(ids, dir2);
 
-    printf("\n\n->Determine o numero de colunas:\n");
-    scanf("\t%d", &qntd_col);
+    strcat(qntid_colunas, "./data/qnt_cols/");
+    strcat(dir3,".csv");
+    strcat(qntid_colunas, dir3);
+    char c[0];
+// Abre o arquivo das Colunas para saber a quantidade
+    fp = fopen(qntid_colunas,"r");
+    c[0] = fgetc(fp);
+printf("C: %s\n", c);
+// Dá um cast para transformar de char para int.
+    qntd_col = strtol(c, NULL, 10);
+    printf("qnt col: %d\n", qntd_col);
+    fclose(fp);
+
+    fp = fopen(nome_tabela,"a");
+    fprintf(fp, "\n");
+
+
     printf("\n\n->Quantos elementos deseja inserir?\n");
     scanf("%d", &qntd_lin);
 
@@ -60,7 +78,64 @@ void adicionar_linha(db* banco){
         adicionar_id(ids);
     }
     fclose(fp);
-    voltar_menu_secundario();
+//     voltar_menu_secundario();
+}
+
+
+void adicionar_coluna(db* banco){
+    int qntd_col=0;
+   printf("\n\n->Determine o nome da tabela: ");
+    char* dir = (char*)malloc(50);
+    scanf(" %s", dir);
+    char* dir3 = (char*)malloc(50);
+    strcpy(dir3,dir);
+
+    char* nome_tabela = (char*)malloc(50);
+    strcat(nome_tabela, "./data/banco/");
+    strcat(dir,".csv");
+    strcat(nome_tabela, dir);
+
+    char* qntid_colunas = (char*)malloc(50);
+
+    strcat(qntid_colunas, "./data/qnt_cols/");
+    strcat(dir3,".csv");
+    strcat(qntid_colunas, dir3);
+    char c[0];
+// Abre o arquivo das Colunas para saber a quantidade
+    fp = fopen(qntid_colunas,"r");
+    c[0] = fgetc(fp);
+printf("C: %s\n", c);
+// Dá um cast para transformar de char para int.
+    qntd_col = strtol(c, NULL, 10);
+    printf("qnt col: %d\n", qntd_col);
+    fclose(fp);
+
+    printf("\n\n->Quantas colunas deseja criar? ");
+    int add_qntd_col, nova_qntd_col;
+    scanf("\t%d", &add_qntd_col);
+    nova_qntd_col = qntd_col + add_qntd_col;
+
+    /*fp = fopen(qntid_colunas,"wb");
+    fprintf(fp,"%d,", qntd_col);
+    fclose(fp);*/
+
+    db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
+
+    // Abre o arquivo com o nome escolhido para a tabela
+    fp=fopen(nome_tabela,"r+");
+
+
+/* A partir daqui tá errado */
+    for(int i = qntd_col+1 ; i <= nova_qntd_col ; i++){
+        printf("\n\n ->Qual o nome da Coluna %d ? ",i);
+        char* nome_coluna = (char*)malloc(24);
+        scanf("%s",nome_coluna);
+        elem[i].nome_da_coluna = nome_coluna;
+        fprintf(fp,"%s,", elem[i].nome_da_coluna);
+
+    }
+/* Até aqui */
+    fclose(fp);
 }
 
 
@@ -106,9 +181,6 @@ void testando_a_chave(){
 
 }
 
-void adicionar_coluna(db* banco){
-    printf("Under Construction");
-}
 void deletar_dado(db* banco){
     printf("Under Construction");
 }
@@ -123,7 +195,7 @@ void opera_tabela(db* banco){
 Selecione uma operaçao:\n\
 [1] - Procurar algum dado nessa tabela\n\
 [2] - Adicionar uma nova linha\n\
-[3] - Editar a linha\n\
+[3] - Adicionar uma nova Coluna\n\
 [4] - Deletar algum dado nessa tabela\n\
 [5] - Mostrar a tabela\n\
 [6] - Voltar ao menu principal\n\
@@ -141,7 +213,7 @@ Selecione uma operaçao:\n\
             adicionar_linha(banco);
             break;
         case 3:
-            testando_a_chave();
+            adicionar_coluna(banco);
             break;
         case 4:
             deletar_dado(banco);

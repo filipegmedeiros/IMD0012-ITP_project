@@ -1,7 +1,7 @@
 ################## MAKEFILE #################
 
 FLAGS = -lGL -lpng -lz -lm -o
-CFLAGS = -Wall
+CFLAGS = -Wall -Werror
 CC = gcc
 BINS = db run
 VPATH=src bin
