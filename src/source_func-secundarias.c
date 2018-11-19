@@ -82,6 +82,9 @@ printf("C: %s\n", c);
 }
 
 
+
+
+
 void adicionar_coluna(db* banco){
     int qntd_col=0;
    printf("\n\n->Determine o nome da tabela: ");
@@ -122,21 +125,38 @@ printf("C: %s\n", c);
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
 
     // Abre o arquivo com o nome escolhido para a tabela
-    fp=fopen(nome_tabela,"a");
-
-
+   char* nome_coluna = (char*)malloc(70);
+  char* verificador = malloc(sizeof(char)*24);
 /* A partir daqui tá errado */
     for(int i = qntd_col ; i < nova_qntd_col ; i++){
         printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
-        char* nome_coluna = (char*)malloc(70);
+     
         scanf("%s",nome_coluna);
+
+ 		fp=fopen(nome_tabela,"r");
+      
+        while(fscanf(fp, "%[^,],", verificador) != EOF){
+            if ( strncmp(verificador,nome_coluna,4) == 0){
+              printf("Essa coluna já existe, digite outro nome por favor.");
+        }
+        fclose(fp);
+    }
+    	fp=fopen(nome_tabela,"a");
         elem[i].nome_da_coluna = nome_coluna;
         fprintf(fp,"%s,", elem[i].nome_da_coluna);
+        fclose(fp);
+       
+
+
+
 
     }
-/* Até aqui */
-    fclose(fp);
+
+
 }
+/* Até aqui */
+   
+
 
 
 //Ler o arquivo chaves_primarias e verifica se existe uma chave primaria igual
