@@ -115,20 +115,20 @@ printf("C: %s\n", c);
     scanf("\t%d", &add_qntd_col);
     nova_qntd_col = qntd_col + add_qntd_col;
 
-    /*fp = fopen(qntid_colunas,"wb");
+    fp = fopen(qntid_colunas,"w");
     fprintf(fp,"%d,", qntd_col);
-    fclose(fp);*/
+    fclose(fp);
 
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
 
     // Abre o arquivo com o nome escolhido para a tabela
-    fp=fopen(nome_tabela,"r+");
+    fp=fopen(nome_tabela,"a");
 
 
 /* A partir daqui tá errado */
-    for(int i = qntd_col+1 ; i <= nova_qntd_col ; i++){
-        printf("\n\n ->Qual o nome da Coluna %d ? ",i);
-        char* nome_coluna = (char*)malloc(24);
+    for(int i = qntd_col ; i < nova_qntd_col ; i++){
+        printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
+        char* nome_coluna = (char*)malloc(70);
         scanf("%s",nome_coluna);
         elem[i].nome_da_coluna = nome_coluna;
         fprintf(fp,"%s,", elem[i].nome_da_coluna);
