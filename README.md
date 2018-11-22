@@ -37,17 +37,17 @@ make all
 
 <p align="center">
     <a href="https://github.com/sarabms/database_manager/releases/tag/v0.1">
-        <img src="https://img.shields.io/badge/CHECKPOINT%2001-100%25-brightgreen.svg?longCache=true&style=for-the-badge" /></a>
+        <img src="https://img.shields.io/badge/CHECKPOINT%2001-100%25%20%7C%20100%25-brightgreen.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 
 
 <p align="center">
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint02">
-        <img src="https://img.shields.io/badge/CHECKPOING%2002-60%25-green.svg?longCache=true&style=for-the-badge" /></a>
+        <img src="https://img.shields.io/badge/CHECKPOINT%2002-60%25%20%7C%200%25-yellow.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint03">
-        <img src="https://img.shields.io/badge/CHECKPOINT%2003-60%25%20%20%7C%2070%25-brightgreen.svg?longCache=true&style=for-the-badge" /></a>
+        <img src="https://img.shields.io/badge/CHECKPOINT%2003-70%25%20%7C%2060%25-green.svg?longCache=true&style=for-the-badge" /></a>
 </p>
 <p align="center">
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04">
