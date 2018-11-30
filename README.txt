@@ -94,9 +94,11 @@ Sara Beatriz
 
 
 >> Sara
-. Primeiro Checkpoint 100%
 . Autor de criar_tabela,imprime_tabela,adicionar_linha
 . Contribuições na adicionar_coluna,testando_a_chave,opera_tabela,exibir_menu
+. Correção de erros de memória e erros de falha de segmentação
+. Ideia de usar .csv
+
 
 
 /* 
