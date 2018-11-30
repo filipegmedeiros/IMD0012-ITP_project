@@ -82,7 +82,7 @@ void criar_tabela(db* banco){
     printf("\n\n->Quantas colunas deseja criar? ");
     int qntd_col;
     scanf("\t%d", &qntd_col);
-    
+
     // Adicona a um banco o numero de colunas que possui.
     banco -> qntd_colunas = qntd_col;
     fp = fopen(qntid_colunas,"wb");
@@ -146,18 +146,47 @@ void imprime_tabela(db* banco){
     banco -> nome_da_tabela = nome_tabela;
     printf("\n");
     fp = fopen(banco -> nome_da_tabela, "r");
+
+    if (fp == NULL) {
+        printf("Tabela não existe, por favor reinicie o processo!");
+        voltar_menu_primario();
+    }
+
+
     c = fgetc(fp);
 
 
-   printf("%s  \n", nome_tabela);
-if(fp == NULL){
-   printf("Error in file opening\n");
-}else{
     while (c != EOF){ 
         printf ("%c", c); 
         c = fgetc(fp); 
     }
     printf("\n");
     voltar_menu_primario();
+
 }
+
+void remove_tabela(db* banco){
+    printf("\n\n->Qual o nome da tabela? ");
+    char* dir = (char*)malloc(24);
+    scanf(" %s", dir);
+
+    char* nome_tabela = (char*)malloc(24);
+
+    strcat(nome_tabela, "./data/banco/");
+    strcat(dir,".csv");
+    strcat(nome_tabela, dir);
+
+    banco -> nome_da_tabela = nome_tabela;
+    printf("\n");
+    fp = fopen(banco -> nome_da_tabela, "r");
+    int ret;
+    ret = remove(banco -> nome_da_tabela);
+
+    if(ret == 0) {
+        printf("Deletado com Sucesso!\n");
+    }else{
+        printf("Error: Nâo existe o arquivo.");
+    }
+
+    voltar_menu_primario();
 }

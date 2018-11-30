@@ -265,7 +265,8 @@ Selecione uma operaçao:\n\
 [1] - Criar uma nova tabela\n\
 [2] - Operar uma tabela existente\n\
 [3] - Imprimir tabela existente\n\
-[4] - Sair do Programa\n\
+[4] - Apagar tabela existente\n\
+[5] - Sair do Programa\n\
             \n");
 
 
@@ -284,6 +285,9 @@ Selecione uma operaçao:\n\
             break;
         case 3:
             imprime_tabela(banco);
+            break;
+        case 4:
+            remove_tabela(banco);
             break;
         default:
             printf("Adeus! \n");
