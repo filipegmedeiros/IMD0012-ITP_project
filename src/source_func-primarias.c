@@ -6,17 +6,17 @@ void criar_tabela(db* banco){
 
     // Determina o Nome da Tabela
     printf("\n\n->Determine o nome da tabela: ");
-    char* dir = (char*)malloc(50);
-    char* dir2 = (char*)malloc(50);
-    char* dir3 = (char*)malloc(50);
+    char* dir = malloc(50);
+    char* dir2 = malloc(50);
+    char* dir3 = malloc(50);
     scanf(" %s", dir);
 
     strcpy(dir2,dir);
     strcpy(dir3,dir);
 
-    char* nome_tabela = (char*)malloc(50);
-    char* ids = (char*)malloc(50);
-    char* qntid_colunas = (char*)malloc(50);
+    char* nome_tabela = malloc(50);
+    char* ids = malloc(50);
+    char* qntid_colunas = malloc(50);
 
     strcpy(ids,nome_tabela);
     strcpy(qntid_colunas,nome_tabela);
@@ -37,14 +37,14 @@ void criar_tabela(db* banco){
     //printf("%s",ids);
     // Determina a primeira chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
-    char* chave_primaria = (char*)malloc(24);
+    char* chave_primaria = malloc(24);
     scanf(" %s", chave_primaria);
     banco -> a_chave_primaria = chave_primaria;
 
-    int aux = 0;
+    //int aux = 0;
 
     //Ler o arquivo chaves_primarias e verifica se existe uma chave primaria igual
-    void testando_a_chave(){
+   /* void testando_a_chave(){
         aux = 0;
         fp=fopen("./data/chaves_primarias.csv","r");
         char* verificador = malloc(sizeof(char)*24);
@@ -58,10 +58,10 @@ void criar_tabela(db* banco){
             }
         }
         fclose(fp);
-    }
-    testando_a_chave();
+    }*/
+    //testando_a_chave();
 
-    if ( aux == 0 ){
+    /*if ( aux == 0 ){
         fp=fopen("./data/chaves_primarias.csv","a");
         fprintf(fp,"%s,", chave_primaria);
         fclose(fp);
@@ -69,7 +69,7 @@ void criar_tabela(db* banco){
         printf("\n\n->Determine o novo nome da chave primaria: ");
         scanf(" %s", chave_primaria);
         testando_a_chave();
-    }
+    }*/
 
     // Abre o arquivo ID e coloca na primeira linha a chave
     fp = fopen(ids,"wb");
@@ -108,7 +108,7 @@ void criar_tabela(db* banco){
 
     for(int i = 0 ; i < banco -> qntd_colunas ; i++){
         printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
-        char* nome_coluna = (char*)malloc(24);
+        char* nome_coluna = malloc(24);
         scanf("%s",nome_coluna);
         elem[i].nome_da_coluna = nome_coluna;
         fprintf(fp,"%s,", elem[i].nome_da_coluna);
@@ -116,7 +116,7 @@ void criar_tabela(db* banco){
     }
 
 
-    free(nome_tabela);
+
     for(int i = 0 ; i < banco -> qntd_colunas ; i++){
         free(elem[i].nome_da_coluna);
 
@@ -134,10 +134,10 @@ void criar_tabela(db* banco){
 // Imprime a tabela escolhida
 void imprime_tabela(db* banco){
     printf("\n\n->Qual o nome da tabela? ");
-    char* dir = (char*)malloc(24);
+    char* dir = malloc(50);
     scanf(" %s", dir);
 
-    char* nome_tabela = (char*)malloc(24);
+    char* nome_tabela = malloc(50);
 
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
@@ -161,16 +161,19 @@ void imprime_tabela(db* banco){
         c = fgetc(fp); 
     }
     printf("\n");
+
+    free(dir);
+    free(nome_tabela);
     voltar_menu_primario();
 
 }
 
 void remove_tabela(db* banco){
     printf("\n\n->Qual o nome da tabela? ");
-    char* dir = (char*)malloc(24);
+    char* dir = malloc(24);
     scanf(" %s", dir);
 
-    char* nome_tabela = (char*)malloc(24);
+    char* nome_tabela = malloc(24);
 
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");

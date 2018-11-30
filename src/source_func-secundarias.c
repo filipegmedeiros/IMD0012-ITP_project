@@ -1,6 +1,7 @@
 #include "headers.h"
 
 FILE *fp;
+FILE *fp2;
 void procurar_dado(db* banco){
     printf("====================================\n");
     printf("Não foi implementado, infelizmente.\n");
@@ -21,14 +22,14 @@ void adicionar_id(char* endereco){
 
     //    printf("o caminho é %s",endereco);
 
-    char* numero_id = (char*)malloc(24);
-    fp = fopen(endereco,"a");
+    char* numero_id = malloc(24);
+    fp2 = fopen(endereco,"a");
 
     printf("\n\n->Determine o ID da linha atual:\n");
     scanf("%s", numero_id);
-    fprintf(fp, "%s,", numero_id);
-    fprintf(fp,"\n");
-    fclose(fp);
+    fprintf(fp2, "%s,", numero_id);
+    fprintf(fp2,"\n");
+    fclose(fp2);
 
 }
 
@@ -37,22 +38,25 @@ void adicionar_linha(db* banco){
     char elemento[50];
 
     printf("\n\n->Determine o nome da tabela: ");
-    char* dir = (char*)malloc(50);
+   
+    char* dir = malloc(50);
+    //printf("\n oii: %s", dir);
     scanf(" %s", dir);
-    char* dir2 = (char*)malloc(50);
+    
+    char* dir2 = malloc(20);
     strcpy(dir2,dir);
-    char* dir3 = (char*)malloc(50);
+    char* dir3 = malloc(20);
     strcpy(dir3,dir);
 
-    char* nome_tabela = (char*)malloc(50);
+    char* nome_tabela = malloc(50);
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
 
     //imprime_tabela(db* banco);
     //criando a pasta id
-    char* ids = (char*)malloc(50);
-    char* qntid_colunas = (char*)malloc(50);
+    char* ids = malloc(50);
+    char* qntid_colunas = malloc(50);
 
     strcat(ids, "./data/ids/");
     strcat(dir2,".csv");
@@ -65,10 +69,10 @@ void adicionar_linha(db* banco){
     // Abre o arquivo das Colunas para saber a quantidade
     fp = fopen(qntid_colunas,"r");
     c[0] = fgetc(fp);
-    printf("C: %s\n", c);
+    //printf("C: %s\n", c);
     // Dá um cast para transformar de char para int.
     qntd_col = strtol(c, NULL, 10);
-    printf("qnt col: %d\n", qntd_col);
+    //printf("qnt col: %d\n", qntd_col);
     fclose(fp);
 
     fp = fopen(nome_tabela,"a");
@@ -77,9 +81,9 @@ void adicionar_linha(db* banco){
 
     printf("\n\n->Quantos elementos deseja inserir?\n");
     scanf("%d", &qntd_lin);
-
+    printf("qnttd col: %d", qntd_col);
     for(int j=0; j<qntd_lin; j++){
-        for (int i = 0; i<qntd_col; i++){
+        for (int i=0; i<qntd_col; i++){
 
             printf("Insira um elemento na coluna %d: ", i+1);
             scanf("%s", elemento);
