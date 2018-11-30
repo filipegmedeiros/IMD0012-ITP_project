@@ -26,9 +26,14 @@ Copie, altere, arrume e use
 ```
 git clone https://github.com/filipegmedeiros/IMD0012-ITP_project
 cd IMD0012-ITP_project
-make all
+make
 ```
-
+ ## Como usar o valgrind??
+```
+git clone https://github.com/filipegmedeiros/IMD0012-ITP_project
+cd IMD0012-ITP_project
+make debug
+```
  
 -----------------------------------------------------------------------------------------------------------------------------
 
