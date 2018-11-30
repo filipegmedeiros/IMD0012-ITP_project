@@ -97,3 +97,10 @@ Sara Beatriz
 . Primeiro Checkpoint 100%
 . Autor de criar_tabela,imprime_tabela,adicionar_linha
 . Contribuições na adicionar_coluna,testando_a_chave,opera_tabela,exibir_menu
+
+
+/* 
+As contribuições acima não demonstram realmente o grau de complexidade envolvido pelos membros.
+>>>> No fato, ambos contribuiram igualmente no projeto inteiro. <<<<
+>>>> No fato, ambos contribuiram igualmente no projeto inteiro. <<<<
+*/
