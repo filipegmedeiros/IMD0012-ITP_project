@@ -8,7 +8,7 @@ void procurar_dado(db* banco){
 void adicionar_id(char* endereco){
 
 
-//    printf("o caminho é %s",endereco);
+    //    printf("o caminho é %s",endereco);
 
     char* numero_id = (char*)malloc(24);
     fp = fopen(endereco,"a");
@@ -51,11 +51,11 @@ void adicionar_linha(db* banco){
     strcat(dir3,".csv");
     strcat(qntid_colunas, dir3);
     char c[0];
-// Abre o arquivo das Colunas para saber a quantidade
+    // Abre o arquivo das Colunas para saber a quantidade
     fp = fopen(qntid_colunas,"r");
     c[0] = fgetc(fp);
-printf("C: %s\n", c);
-// Dá um cast para transformar de char para int.
+    printf("C: %s\n", c);
+    // Dá um cast para transformar de char para int.
     qntd_col = strtol(c, NULL, 10);
     printf("qnt col: %d\n", qntd_col);
     fclose(fp);
@@ -78,8 +78,8 @@ printf("C: %s\n", c);
         adicionar_id(ids);
     }
     fclose(fp);
-//     voltar_menu_secundario();
-	voltar_menu_secundario();
+    //     voltar_menu_secundario();
+    voltar_menu_secundario();
 }
 
 
@@ -88,7 +88,7 @@ printf("C: %s\n", c);
 
 void adicionar_coluna(db* banco){
     int qntd_col=0;
-   printf("\n\n->Determine o nome da tabela: ");
+    printf("\n\n->Determine o nome da tabela: ");
     char* dir = (char*)malloc(50);
     scanf(" %s", dir);
     char* dir3 = (char*)malloc(50);
@@ -105,11 +105,11 @@ void adicionar_coluna(db* banco){
     strcat(dir3,".csv");
     strcat(qntid_colunas, dir3);
     char c[0];
-// Abre o arquivo das Colunas para saber a quantidade
+    // Abre o arquivo das Colunas para saber a quantidade
     fp = fopen(qntid_colunas,"r");
     c[0] = fgetc(fp);
-printf("C: %s\n", c);
-// Dá um cast para transformar de char para int.
+    printf("C: %s\n", c);
+    // Dá um cast para transformar de char para int.
     qntd_col = strtol(c, NULL, 10);
     printf("qnt col: %d\n", qntd_col);
     fclose(fp);
@@ -126,37 +126,37 @@ printf("C: %s\n", c);
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
 
     // Abre o arquivo com o nome escolhido para a tabela
-   char* nome_coluna = (char*)malloc(70);
-  char* verificador = malloc(sizeof(char)*24);
-/* A partir daqui tá errado */
+    char* nome_coluna = (char*)malloc(70);
+    char* verificador = malloc(sizeof(char)*24);
+    /* A partir daqui tá errado */
     for(int i = qntd_col ; i < nova_qntd_col ; i++){
         printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
-     
+
         scanf("%s",nome_coluna);
 
- 		fp=fopen(nome_tabela,"r");
-      
+        fp=fopen(nome_tabela,"r");
+
         while(fscanf(fp, "%[^,],", verificador) != EOF){
             if ( strncmp(verificador,nome_coluna,4) == 0){
-              printf("Essa coluna já existe, digite outro nome por favor.");
+                printf("Essa coluna já existe, digite outro nome por favor.");
+            }
+            fclose(fp);
         }
-        fclose(fp);
-    }
-    	fp=fopen(nome_tabela,"a");
+        fp=fopen(nome_tabela,"a");
         elem[i].nome_da_coluna = nome_coluna;
         fprintf(fp,"%s,", elem[i].nome_da_coluna);
         fclose(fp);
-       
+
 
 
 
 
     }
 
-voltar_menu_secundario();
+    voltar_menu_secundario();
 }
 /* Até aqui */
-   
+
 
 
 
@@ -195,9 +195,9 @@ void testando_a_chave(){
         }
 
 
-     
+
     }
-    
+
     fclose(fp);
 
 }
@@ -210,16 +210,16 @@ void deletar_dado(db* banco){
 
 void opera_tabela(db* banco){
     printf("\
-\n========================\n\
-\t MENU DA TABELA\
-\n========================\n\n\
-Selecione uma operaçao:\n\
-[1] - Procurar algum dado nessa tabela\n\
-[2] - Adicionar uma nova linha\n\
-[3] - Adicionar uma nova Coluna\n\
-[4] - Deletar algum dado nessa tabela\n\
-[5] - Mostrar a tabela\n\
-[6] - Voltar ao menu principal\n\
+            \n========================\n\
+            \t MENU DA TABELA\
+            \n========================\n\n\
+            Selecione uma operaçao:\n\
+            [1] - Procurar algum dado nessa tabela\n\
+            [2] - Adicionar uma nova linha\n\
+            [3] - Adicionar uma nova Coluna\n\
+            [4] - Deletar algum dado nessa tabela\n\
+            [5] - Mostrar a tabela\n\
+            [6] - Voltar ao menu principal\n\
             \n");
 
     int op2=0;
@@ -318,10 +318,11 @@ Para voltar aos Menus digite: \
 [1] - Voltar ao Menu da Tabela\n\
 [2] - Voltar ao Menu Inicial\n\
 [3] - Sair do Programa\n");
+
     int op5;
     scanf(" %d", &op5);
 
-  switch (op5){
+    switch (op5){
         case 1:
             opera_tabela(banco);
             break;
