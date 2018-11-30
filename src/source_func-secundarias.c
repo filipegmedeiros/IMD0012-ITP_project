@@ -2,7 +2,18 @@
 
 FILE *fp;
 void procurar_dado(db* banco){
-    printf("Under Construction");
+    printf("====================================\n");
+    printf("Não foi implementado, infelizmente.\n");
+    printf("====================================\n\n");
+    voltar_menu_secundario();
+
+}
+
+void deletar_dado(db* banco){
+    printf("====================================\n");
+    printf("Não foi implementado, infelizmente.\n");
+    printf("====================================\n\n");
+    voltar_menu_secundario();
 }
 
 void adicionar_id(char* endereco){
@@ -202,9 +213,7 @@ void testando_a_chave(){
 
 }
 
-void deletar_dado(db* banco){
-    printf("Under Construction");
-}
+
 
 
 
@@ -266,7 +275,8 @@ Selecione uma operaçao:\n\
 [2] - Operar uma tabela existente\n\
 [3] - Imprimir tabela existente\n\
 [4] - Apagar tabela existente\n\
-[5] - Sair do Programa\n\
+[5] - Rodar o Programa sob Valgrind\n\
+[6] - Sair do Programa\n\
             \n");
 
 
@@ -289,6 +299,9 @@ Selecione uma operaçao:\n\
         case 4:
             remove_tabela(banco);
             break;
+        case 5:
+            printf("Para rodar com Valgrind você deverá rodar o comando ( make debug ).\
+ O log se encontrará na pasta valgrind. \n");
         default:
             printf("Adeus! \n");
 

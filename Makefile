@@ -14,5 +14,10 @@ db:    headers.h main.c source_func-primarias.c source_func-secundarias.c
 run:    programa.out
 	./$<
 
+debug:    headers.h main.c source_func-primarias.c source_func-secundarias.c programa.out
+	valgrind --leak-check=full --log-file="valgrind/memoryleaks.log" ./bin/programa.out
+
+
 clear:
-	rm -rf /bin/programa.out
+	rm -rf ./bin/programa.out
+	rm -rf ./valgrind/memoryleaks.log
