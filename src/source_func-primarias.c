@@ -148,10 +148,16 @@ void imprime_tabela(db* banco){
     fp = fopen(banco -> nome_da_tabela, "r");
     c = fgetc(fp);
 
+
+   printf("%s  \n", nome_tabela);
+if(fp == NULL){
+   printf("Error in file opening\n");
+}else{
     while (c != EOF){ 
         printf ("%c", c); 
         c = fgetc(fp); 
     }
     printf("\n");
     voltar_menu_primario();
+}
 }

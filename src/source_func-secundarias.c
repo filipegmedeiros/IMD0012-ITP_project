@@ -79,6 +79,7 @@ printf("C: %s\n", c);
     }
     fclose(fp);
 //     voltar_menu_secundario();
+	voltar_menu_secundario();
 }
 
 
@@ -152,7 +153,7 @@ printf("C: %s\n", c);
 
     }
 
-
+voltar_menu_secundario();
 }
 /* Até aqui */
    

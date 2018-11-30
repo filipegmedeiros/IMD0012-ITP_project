@@ -3,7 +3,7 @@
 FLAGS = -lGL -lpng -lz -lm -o
 CFLAGS = -Wall -Werror
 CC = gcc
-BINS = db run
+BINS = clear db run
 VPATH=src bin
 
 all:    $(BINS)
@@ -13,3 +13,6 @@ db:    headers.h main.c source_func-primarias.c source_func-secundarias.c
 
 run:    programa.out
 	./$<
+
+clear:
+	rm -rf /bin/programa.out
