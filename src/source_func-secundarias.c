@@ -210,16 +210,16 @@ void deletar_dado(db* banco){
 
 void opera_tabela(db* banco){
     printf("\
-            \n========================\n\
-            \t MENU DA TABELA\
-            \n========================\n\n\
-            Selecione uma operaçao:\n\
-            [1] - Procurar algum dado nessa tabela\n\
-            [2] - Adicionar uma nova linha\n\
-            [3] - Adicionar uma nova Coluna\n\
-            [4] - Deletar algum dado nessa tabela\n\
-            [5] - Mostrar a tabela\n\
-            [6] - Voltar ao menu principal\n\
+\n========================\n\
+\t MENU DA TABELA\
+\n========================\n\n\
+Selecione uma operaçao:\n\
+[1] - Procurar algum dado nessa tabela\n\
+[2] - Adicionar uma nova linha\n\
+[3] - Adicionar uma nova Coluna\n\
+[4] - Deletar algum dado nessa tabela\n\
+[5] - Mostrar a tabela\n\
+[6] - Voltar ao menu principal\n\
             \n");
 
     int op2=0;
