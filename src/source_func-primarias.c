@@ -34,42 +34,14 @@ void criar_tabela(db* banco){
     strcat(dir3,".csv");
     strcat(qntid_colunas, dir3);
 
-    //printf("%s",ids);
+  
     // Determina a primeira chave Primaria
     printf("\n\n->Determine o nome da chave primaria: ");
     char* chave_primaria = malloc(24);
     scanf(" %s", chave_primaria);
     banco -> a_chave_primaria = chave_primaria;
 
-    //int aux = 0;
 
-    //Ler o arquivo chaves_primarias e verifica se existe uma chave primaria igual
-   /* void testando_a_chave(){
-        aux = 0;
-        fp=fopen("./data/chaves_primarias.csv","r");
-        char* verificador = malloc(sizeof(char)*24);
-        while(fscanf(fp, "%[^,],", verificador) != EOF){
-            if ( strncmp(verificador,chave_primaria,4) == 0){
-                printf("Essa chave já existe, por favor, escolha outra.");
-                aux = 1;
-                break;
-            } else {
-                continue;
-            }
-        }
-        fclose(fp);
-    }*/
-    //testando_a_chave();
-
-    /*if ( aux == 0 ){
-        fp=fopen("./data/chaves_primarias.csv","a");
-        fprintf(fp,"%s,", chave_primaria);
-        fclose(fp);
-    } else{
-        printf("\n\n->Determine o novo nome da chave primaria: ");
-        scanf(" %s", chave_primaria);
-        testando_a_chave();
-    }*/
 
     // Abre o arquivo ID e coloca na primeira linha a chave
     fp = fopen(ids,"wb");
@@ -128,7 +100,6 @@ void criar_tabela(db* banco){
     free(elem);
     fclose(fp);
 
-    voltar_menu_primario();
 }
 
 // Imprime a tabela escolhida
@@ -149,7 +120,7 @@ void imprime_tabela(db* banco){
 
     if (fp == NULL) {
         printf("Tabela não existe, por favor reinicie o processo!");
-        voltar_menu_primario();
+        //voltar_menu_primario();
     }
 
 
@@ -164,7 +135,7 @@ void imprime_tabela(db* banco){
 
     free(dir);
     free(nome_tabela);
-    voltar_menu_primario();
+    //voltar_menu_primario();
 
 }
 
@@ -191,5 +162,5 @@ void remove_tabela(db* banco){
         printf("Error: Nâo existe o arquivo.");
     }
 
-    voltar_menu_primario();
+    //voltar_menu_primario();
 }

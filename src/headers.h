@@ -42,6 +42,6 @@ void imprime_tabela(db* banco);
 void deletar_dado(db* banco);
 void imprime_tabela(db* banco);
 void exibir_menu();
-void voltar_menu_primario();
-void voltar_menu_secundario();
+/*void voltar_menu_primario();
+void voltar_menu_secundario();*/
 void remove_tabela(db* banco);

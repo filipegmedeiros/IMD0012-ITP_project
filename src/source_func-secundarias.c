@@ -2,19 +2,20 @@
 
 FILE *fp;
 FILE *fp2;
+FILE *fp3;
 void procurar_dado(db* banco){
     printf("====================================\n");
-    printf("Não foi implementado, infelizmente.\n");
+    printf("Não foi implementado.\n");
     printf("====================================\n\n");
-    voltar_menu_secundario();
+    //voltar_menu_secundario();
 
 }
 
 void deletar_dado(db* banco){
     printf("====================================\n");
-    printf("Não foi implementado, infelizmente.\n");
+    printf("Não foi implementado.\n");
     printf("====================================\n\n");
-    voltar_menu_secundario();
+    //voltar_menu_secundario();
 }
 
 void adicionar_id(char* endereco){
@@ -93,8 +94,12 @@ void adicionar_linha(db* banco){
         adicionar_id(ids);
     }
     fclose(fp);
+    free(dir);
+    free(dir2);
+    free(dir3);
+    free(nome_tabela);
     //     voltar_menu_secundario();
-    voltar_menu_secundario();
+    //voltar_menu_secundario();
 }
 
 
@@ -104,45 +109,42 @@ void adicionar_linha(db* banco){
 void adicionar_coluna(db* banco){
     int qntd_col=0;
     printf("\n\n->Determine o nome da tabela: ");
-    char* dir = (char*)malloc(50);
+    char* dir = malloc(50);
     scanf(" %s", dir);
-    char* dir3 = (char*)malloc(50);
+    char* dir3 = malloc(50);
     strcpy(dir3,dir);
 
-    char* nome_tabela = (char*)malloc(50);
+    char* nome_tabela = malloc(50);
     strcat(nome_tabela, "./data/banco/");
     strcat(dir,".csv");
     strcat(nome_tabela, dir);
 
-    char* qntid_colunas = (char*)malloc(50);
+    char* qntid_colunas = malloc(50);
 
     strcat(qntid_colunas, "./data/qnt_cols/");
     strcat(dir3,".csv");
     strcat(qntid_colunas, dir3);
     char c[0];
     // Abre o arquivo das Colunas para saber a quantidade
-    fp = fopen(qntid_colunas,"r");
-    c[0] = fgetc(fp);
+    fp3 = fopen(qntid_colunas,"r");
+    c[0] = fgetc(fp3);
     printf("C: %s\n", c);
     // Dá um cast para transformar de char para int.
     qntd_col = strtol(c, NULL, 10);
     printf("qnt col: %d\n", qntd_col);
-    fclose(fp);
+    fclose(fp3);
 
     printf("\n\n->Quantas colunas deseja criar? ");
-    int add_qntd_col, nova_qntd_col;
+    int add_qntd_col, nova_qntd_col=0;
     scanf("\t%d", &add_qntd_col);
     nova_qntd_col = qntd_col + add_qntd_col;
-
-    fp = fopen(qntid_colunas,"w");
-    fprintf(fp,"%d,", qntd_col);
-    fclose(fp);
-
+    
     db_elementos *elem=(db_elementos*)malloc(sizeof(db_elementos)*qntd_col);
-
+  
     // Abre o arquivo com o nome escolhido para a tabela
-    char* nome_coluna = (char*)malloc(70);
-    char* verificador = malloc(sizeof(char)*24);
+    char* nome_coluna = malloc(24);
+    char* verificador = malloc(24);
+    
     /* A partir daqui tá errado */
     for(int i = qntd_col ; i < nova_qntd_col ; i++){
         printf("\n\n ->Qual o nome da Coluna %d ? ",i+1);
@@ -161,16 +163,16 @@ void adicionar_coluna(db* banco){
         elem[i].nome_da_coluna = nome_coluna;
         fprintf(fp,"%s,", elem[i].nome_da_coluna);
         fclose(fp);
-
-
-
-
-
-    }
-
-    voltar_menu_secundario();
 }
-/* Até aqui */
+
+    //Atualiza a quantidade de colunas
+    nova_qntd_col=qntd_col+add_qntd_col;
+    fp3 = fopen(qntid_colunas,"w");
+    fprintf(fp3,"%d,", nova_qntd_col);
+    fclose(fp3);
+   
+}
+
 
 
 
@@ -255,9 +257,6 @@ Selecione uma operaçao:\n\
         case 5:
             imprime_tabela(banco);
             break;
-        case 6:
-            voltar_menu_primario();
-            break;
         default:
             printf("opçao invalida.");
 
@@ -307,12 +306,12 @@ Selecione uma operaçao:\n\
             printf("Para rodar com Valgrind você deverá rodar o comando ( make debug ).\
  O log se encontrará na pasta valgrind. \n");
         default:
-            printf("Adeus! \n");
+            printf("Fim.\n");
 
     }
 }
 
-void voltar_menu_primario(){
+/*void voltar_menu_primario(){
     printf("\nDeseja Voltar ao menu Inicial? (s/S) ");
     char op5;
     scanf(" %c", &op5);
@@ -323,10 +322,10 @@ void voltar_menu_primario(){
         printf("\nObrigado por usar nosso programa!\n");
     }
 
-}
+}*/
 
 
-void voltar_menu_secundario(){
+/*void voltar_menu_secundario(){
     db *banco = malloc(sizeof(db));
     printf("\
 \n==============================\n\
@@ -353,7 +352,7 @@ Para voltar aos Menus digite: \
 
     }
 
-}
+}*/
 
 
 
