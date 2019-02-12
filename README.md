@@ -58,10 +58,7 @@ make debug
     <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint04">
         <img src="https://img.shields.io/badge/CHECKPOINT%2004-0%25%20%7C%200%25-red.svg?longCache=true&style=for-the-badge" /></a>
 </p>
-<p align="center">
-    <a href="https://github.com/filipegmedeiros/IMD0012-ITP_project/releases/tag/Checkpoint05">
-        <img src="https://img.shields.io/badge/Checkpoint%2005-Waiting-lightgrey.svg?longCache=true&style=for-the-badge" /></a>
-</p>
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------
